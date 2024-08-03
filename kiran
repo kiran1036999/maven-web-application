@@ -1,0 +1,9 @@
+node{
+    def mavenHome = tool name: 'maven-3.9.7', type: 'maven'
+    stage ('code'){
+        git 'https://github.com/kiran1036999/maven-web-application.git'
+    }
+    stage ('Build'){
+        sh "${mavenHome}/bin/mvn clean package"
+    }
+}
